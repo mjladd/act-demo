@@ -13,7 +13,17 @@ install:
 #> pipeline: run entire pipeline
 pipeline:
 	ACT 
-.PHONE: pipeline
+.PHONY: pipeline
+
+#> dry: dry-run entire pipeline
+dry:
+	ACT -n
+.PHONY: dry
+
+#> test: run the tests
+test:
+	ACT -j test
+.PHONY: test
 
 
 help:
