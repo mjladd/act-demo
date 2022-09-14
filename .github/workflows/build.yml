@@ -4,13 +4,30 @@ on:
   push:
     branches:
       - '*'
-  pull_request:
+  
+env:
+  name: Alice
 
 jobs:
-  build:
-
-    runs-on: "ubuntu-20.04"
-
+  build_1:
+    runs-on: "ubuntu-latest"
+    env:
+      name: Bob
     steps:
-    - name: Test
-      run: echo "This is a test"
+    - name: Run a simple one-line script
+      run: echo "Hello $name"
+
+  build_2:
+    runs-on: "ubuntu-latest"
+    steps:
+    - name: Run a simple one-line script
+      run: echo Hello $name
+
+  dump:
+    runs-on: ubuntu-latest
+    steps:
+    - env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: |
+        echo "$GITHUB_CONTEXT"
+        echo Actor: ${{ github.actor }}
