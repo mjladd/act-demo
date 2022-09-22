@@ -49,7 +49,7 @@ cat .actrc
 
 * `act -s MY_SECRET=somevalue` : use `somevalue` as the value for `MY_SECRET`
 * `act -s MY_SECRET` : check for environmental variable named `MY_SECRET` and use it if it exists
-* `act --secrete-file my.secrets` : load secret values from `my.secrets` file (same format as `.env` file)
+* `act --secret-file my.secrets` : load secret values from `my.secrets` file (same format as `.env` file)
 
 ## Demo
 
