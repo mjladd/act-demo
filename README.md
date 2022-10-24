@@ -31,6 +31,17 @@ ENV_VAR_01=some-special-env-var
 SECRET_01=secret-stuff-here-no-peeking
 ```
 
+## Secrets
+
+* `act -s MY_SECRET=somevalue` : use `somevalue` as the value for `MY_SECRET`
+* `act -s MY_SECRET` : check for environmental variable named `MY_SECRET` and use it if it exists
+* `act --secret-file my.secrets` : load secret values from `my.secrets` file (same format as `.env` file)
+
+## What `act` doesn't easily support
+
+* customer containers for jobs
+* non-linux runners
+
 ### Default Configuration
 
 You can save configuration parameters to pass to act in a `.actrc` file
@@ -39,17 +50,6 @@ You can save configuration parameters to pass to act in a `.actrc` file
 cat .actrc
 --container-architecture linux/amd64
 ```
-
-## What `act` doesn't easily support
-
-* customer containers for jobs
-* non-linux runners
-
-## Secrets
-
-* `act -s MY_SECRET=somevalue` : use `somevalue` as the value for `MY_SECRET`
-* `act -s MY_SECRET` : check for environmental variable named `MY_SECRET` and use it if it exists
-* `act --secret-file my.secrets` : load secret values from `my.secrets` file (same format as `.env` file)
 
 ## Demo
 
